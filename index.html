@@ -1,0 +1,296 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Strokes Painting</title>
+    <style>
+        /* Elegant color scheme: Soft whites, deep grays, and gold accents for a luxurious feel */
+        body {
+            font-family: 'Playfair Display', serif; /* Elegant serif font */
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f8f8f8, #e0e0e0); /* Subtle light gradient */
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #d4af37; /* Gold accent */
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            margin: 0 1rem;
+        }
+        nav a {
+            color: #d4af37; /* Gold accent */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #b8860b;
+        }
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('https://via.placeholder.com/1920x1080/f0f0f0/333333?text=Artistic+Paint+Brushes') no-repeat center center/cover; /* Placeholder for hero image */
+            position: relative;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.3); /* Light overlay for text readability */
+        }
+        #hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            z-index: 1;
+            position: relative;
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        #hero p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            z-index: 1;
+            position: relative;
+        }
+        .btn {
+            background: #d4af37;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            z-index: 1;
+            position: relative;
+        }
+        .btn:hover {
+            background: #b8860b;
+        }
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #portfolio {
+            background: #fff;
+            color: #333;
+        }
+        #portfolio h2 {
+            text-align: center;
+            color: #d4af37;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        .project {
+            background: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        .project img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .project h3 {
+            padding: 1rem;
+            margin: 0;
+            color: #333;
+        }
+        .project p {
+            padding: 0 1rem 1rem;
+            color: #666;
+        }
+        .client-demo {
+            background: #e8e8e8;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+        .client-demo h4 {
+            margin: 0 0 0.5rem 0;
+            color: #d4af37;
+        }
+        #testimonials {
+            background: #f4f4f4;
+        }
+        #testimonials h2 {
+            text-align: center;
+            color: #d4af37;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .testimonial {
+            background: #fff;
+            padding: 2rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .testimonial p {
+            font-style: italic;
+            margin: 0 0 1rem 0;
+        }
+        .testimonial cite {
+            font-weight: bold;
+            color: #d4af37;
+        }
+        footer {
+            background: #333;
+            color: #f4f4f4;
+            text-align: center;
+            padding: 1rem;
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 2rem;
+            }
+            #hero p {
+                font-size: 1.2rem;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="hero">
+        <h1>Elegant Strokes Painting</h1>
+        <p>Transforming Spaces with Artistic Precision – Your Vision, Our Expertise</p>
+        <button class="btn">View Our Work</button>
+    </section>
+    <section id="portfolio">
+        <h2>Client Demos & Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="project">
+                <img src="https://via.placeholder.com/350x250/cccccc/333333?text=Living+Room+Makeover" alt="Living Room Makeover">
+                <h3>Living Room Transformation</h3>
+                <p>A complete repaint of a modern living space, using premium matte finishes for a sophisticated look.</p>
+                <div class="client-demo">
+                    <h4>Client: Sarah Johnson</h4>
+                    <p>"Elegant Strokes turned our dated living room into a stunning, elegant space. The attention to detail was impeccable!"</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="https://via.placeholder.com/350x250/cccccc/333333?text=Kitchen+Renovation" alt="Kitchen Renovation">
+                <h3>Kitchen Renovation</h3>
+                <p>Custom color palette with durable, easy-to-clean paints, perfect for high-traffic areas.</p>
+                <div class="client-demo">
+                    <h4>Client: Michael & Emily Lee</h4>
+                    <p>"Our kitchen feels brand new and luxurious. Highly recommend for anyone seeking quality craftsmanship."</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="https://via.placeholder.com/350x250/cccccc/333333?text=Office+Redesign" alt="Office Redesign">
+                <h3>Corporate Office Redesign</h3>
+                <p>Professional painting services for a corporate environment, enhancing productivity and aesthetics.</p>
+                <div class="client-demo">
+                    <h4>Client: TechCorp Inc.</h4>
+                    <p>"Elegant Strokes delivered on time and exceeded our expectations. Our office now reflects our brand's elegance."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li><strong>Interior Painting:</strong> Expert application of paints for walls, ceilings, and trim.</li>
+            <li><strong>Exterior Painting:</strong> Weather-resistant coatings to protect and beautify your home.</li>
+            <li><strong>Custom Finishes:</strong> Specialty paints like textured or metallic for unique designs.</li>
+            <li><strong>Color Consultation:</strong> Professional advice to choose the perfect palette.</li>
+        </ul>
+    </section>
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            <p>"Elegant Strokes Painting brought elegance and professionalism to our home renovation. Their work is top-notch!"</p>
+            <cite>- Anna Rodriguez</cite>
+        </div>
+        <div class="testimonial">
+            <p>"From consultation to completion, the team was attentive and skilled. Highly recommend for any painting needs."</p>
+            <cite>- David Kim</cite>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@elegantstrokes.com | Phone: +1 (555) 987-6543 | Address: 123 Artistry Lane, Creative City, USA</p>
+        <form>
+            <input type="text" placeholder="Your Name" required><br><br>
+            <input type="email" placeholder="Your Email" required><br><br>
+            <textarea placeholder="Your Message" rows="5" required></textarea><br><br>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 Elegant Strokes Painting. All rights reserved. | Follow us on <a href="#" style="color: #d4af37;">Social Media</a></p>
+    </footer>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        // Simple form submission alert (for demo)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+        });
+    </script>
+</body>
+</html>
